@@ -1,5 +1,8 @@
 # cache for current jar dependecy. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
+<<<<<<< HEAD
 1371364309187 393154 307c1cc532eabbf1d135b43e5c983c9da700449d C:\Users\Avi\Desktop\proj\Project\library\libs\android-support-v4.jar
 1371364307267 393154 307c1cc532eabbf1d135b43e5c983c9da700449d C:\Users\Avi\Desktop\proj\Project\actionbarsherlock\libs\android-support-v4.jar
+=======
+>>>>>>> 33b4ab2bf28dbe1f0947f1a19ef64e663a481b08
