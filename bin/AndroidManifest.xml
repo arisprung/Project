@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tailgate"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="in.wptrafficanalyzer.locationingooglemapv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".TailGateApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.tailgate.activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+<!-- 
+                <category android:name="android.intent.category.LAUNCHER" />
+      -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.RegistrationActivity"
+            android:screenOrientation="portrait" >
+                  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+     
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SignInActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".TGNotificationActivity" >
+        </activity>
+
+        <provider
+            android:name=".db.TailGateMessageContentProvider"
+            android:authorities="com.tailgate.contentprovider" >
+        </provider>
+
+        <service android:name=".TailGateService" >
+        </service>
+
+        <!--
+        <service
+            android:name=".TailGateService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:name="startTailGateService" />
+            
+        </service>
+        -->
+        <service android:name="com.littlefluffytoys.littlefluffylocationlibrary.LocationBroadcastService" />
+
+        <receiver
+            android:name=".reciever.TailGateConnectionReciever"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".reciever.LocationReciever"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.tailgate.littlefluffylocationlibrary.LOCATION_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.littlefluffytoys.littlefluffylocationlibrary.StartupBroadcastReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.littlefluffytoys.littlefluffylocationlibrary.PassiveLocationChangedReceiver"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC8oQ5dWPlZyL-7q4OyKIYWytJcL3BbZVI" />
+    </application>
+
+</manifest>

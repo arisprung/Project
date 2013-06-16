@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rbm_menu_background">#303030</color>
+    <color name="rbm_item_text_color">#ffffff</color>
+     <color name="dark_blue">#1D235E</color>
+      <color name="purple">#BA29AE</color>
+      <color name="pink">#F01860</color>
+      
+    
+</resources>

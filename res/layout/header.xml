@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white" >
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+
+        android:paddingBottom="3dp"
+        android:text="Back"
+        android:textColor="@android:color/black"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="3dp"
+        android:text="dsdsw"
+        android:textColor="@android:color/black"
+        android:textSize="17sp" />
+
+    
+
+    <TextView
+        android:id="@+id/headertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:lineSpacingExtra="-2dp"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:shadowColor="#d9e0ee"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="TailGate"
+        android:textColor="#53575F"
+        android:textSize="24sp" />
+
+</RelativeLayout>

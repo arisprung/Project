@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0101"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dolphins" />
+
+        <Button
+            android:id="@+id/Button0102"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bills" />
+
+        <Button
+            android:id="@+id/Button0103"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pats" />
+
+        <Button
+            android:id="@+id/Button0104"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jets" />
+
+        <Button
+            android:id="@+id/Button0105"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chiefs" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0201"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Broncos" />
+
+        <Button
+            android:id="@+id/Button0202"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raiders" />
+
+        <Button
+            android:id="@+id/Button0203"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texans" />
+
+        <Button
+            android:id="@+id/Button0204"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chargers" />
+
+        <Button
+            android:id="@+id/Button0205"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ravens" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0301"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steelers" />
+
+        <Button
+            android:id="@+id/Button0302"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bengels" />
+
+        <Button
+            android:id="@+id/Button0303"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browns" />
+
+        <Button
+            android:id="@+id/Button0304"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Colts" />
+
+        <Button
+            android:id="@+id/Button0305"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titans" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0401"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jaguars" />
+
+        <Button
+            android:id="@+id/Button0402"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raiders" />
+
+        <Button
+            android:id="@+id/Button0403"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redskins" />
+
+        <Button
+            android:id="@+id/Button0404"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giants" />
+
+        <Button
+            android:id="@+id/Button0405"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cowboys" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0501"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eagels" />
+
+        <Button
+            android:id="@+id/Button0502"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packers" />
+
+        <Button
+            android:id="@+id/Button0503"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vikings" />
+
+        <Button
+            android:id="@+id/Button0504"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bears" />
+
+        <Button
+            android:id="@+id/Button0505"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lions" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0601"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Falcons" />
+
+        <Button
+            android:id="@+id/Button0602"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panthers" />
+
+        <Button
+            android:id="@+id/Button0603"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saints" />
+
+        <Button
+            android:id="@+id/Button0604"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bucs" />
+
+        <Button
+            android:id="@+id/Button0605"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="49ers" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button0701"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seahawks" />
+
+        <Button
+            android:id="@+id/Button0702"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rams" />
+
+        <Button
+            android:id="@+id/Button0703"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cardinals" />
+    </LinearLayout>
+
+</LinearLayout>
