@@ -25,11 +25,11 @@ public class MenuFragment extends Fragment
 {
 
 	private ListView listView;
-	MenuListAdapter adapter;
-	MenuListAdapter teamAdapter;
+	private MenuListAdapter menuAdapter;
+	public static MenuListAdapter teamAdapter;
 	private ListView teamlistView;
 	public static String[] mMenuList = { "Messages", "Map", "Online", "Add Message" };
-	public static String[] mteamlist = { "Dolphins", "Heat", "Marlins", "Panthers" };
+//	public static Strings[] mteamlist = { "Dolphins", "Heat", "Marlins", "Panthers" };
 	private static TailgateSharedPrefrence tailgateSharedPrefs = new TailgateSharedPrefrence();
 	private View header;
 	private Button headerButton;
@@ -51,7 +51,7 @@ public class MenuFragment extends Fragment
 		teamlistView = (ListView) getView().findViewById(R.id.team_list);
 		super.onActivityCreated(savedInstanceState);
 		chatlist = new ArrayList<String>();
-		chatlist.add("Messages");
+		//chatlist.add("Messages");
 		chatlist.add("Map");
 		chatlist.add("Online");
 		chatlist.add("Add Message");
@@ -74,27 +74,28 @@ public class MenuFragment extends Fragment
 		LayoutInflater inflater = getActivity().getLayoutInflater();
 		header = inflater.inflate(R.layout.listview_header, (ViewGroup) getActivity().findViewById(R.id.header_layout_root));
 		headerButton = (Button) header.findViewById(R.id.header_text);
+		headerButton.setText(TailgateConstants.MENU_ADD_TEAM);
 
-		if (teamlist.size() > 0)
-		{
-
-			headerButton.setText(TailgateConstants.MENU_YOUR_TEAM);
-
-		}
-		else
-		{
-			teamlist = new ArrayList<String>();
-			headerButton.setText(TailgateConstants.MENU_ADD_TEAM);
-
-		}
+//		if (teamlist.size() > 0)
+//		{
+//
+//			headerButton.setText(TailgateConstants.MENU_YOUR_TEAM);
+//
+//		}
+//		else
+//		{
+//			teamlist = new ArrayList<String>();
+//			headerButton.setText(TailgateConstants.MENU_ADD_TEAM);
+//
+//		}
 
 		teamlistView.addHeaderView(header, null, false);
 		teamAdapter = new MenuListAdapter(getActivity().getApplicationContext(), R.layout.list_item, teamlist);
 		// UserListAdapter chatAdapter = new UserListAdapter(context, textViewResourceId, objects)
 
-		adapter = new MenuListAdapter(getActivity().getApplicationContext(), R.layout.list_item, chatlist);
+		menuAdapter = new MenuListAdapter(getActivity().getApplicationContext(), R.layout.list_item, chatlist);
 
-		listView.setAdapter(adapter);
+		listView.setAdapter(menuAdapter);
 		teamlistView.setAdapter(teamAdapter);
 
 		setOnItemListner();
@@ -127,22 +128,22 @@ public class MenuFragment extends Fragment
 				Fragment newContent = null;
 				switch (position)
 				{
+//					case 0:
+//						newContent = new MessageFrament();
+//						break;
 					case 0:
-						newContent = new MessageFrament();
-						break;
-					case 1:
 						newContent = new MapTailgateFragment();
 						break;
-					case 2:
+					case 1:
 						newContent = new ChatListFragment();
 						break;
-					case 3:
+					case 2:
 						newContent = new AddMessageFragment();
 						break;
-					case 4:
+					case 3:
 						newContent = new TeamListFragment();
 						break;
-					case 5:
+					case 4:
 						// newContent = new ColorFragment(android.R.color.black);
 						break;
 				}
@@ -198,5 +199,7 @@ public class MenuFragment extends Fragment
 		// ra.switchContent(fragment);
 		// }
 	}
+	
+	
 
 }

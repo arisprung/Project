@@ -24,5 +24,17 @@
         android:paddingTop="5dp"
         android:src="@drawable/online" >
     </ImageView>
+    
+        <RadioButton
+        android:id="@+id/radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:layout_alignParentRight="true"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:visibility="gone"
+         >
+    </RadioButton>
 
 </RelativeLayout>

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tailgate.R;
+import com.tailgate.db.TeamDataSource;
 
 public class MenuListAdapter extends ArrayAdapter<String>
 {
@@ -21,6 +22,7 @@ public class MenuListAdapter extends ArrayAdapter<String>
 	private TextView menuNameTextView;
 	private TextView menuMessageTextView;
 	private TextView menuTimeTextView;
+	private TeamDataSource datasource;
 	private ImageView menuStatusImageView;
 
 	//
@@ -40,7 +42,16 @@ public class MenuListAdapter extends ArrayAdapter<String>
 
 	}
 	
-	
+	@Override
+	public void notifyDataSetChanged()
+	{
+		datasource = new TeamDataSource(context);
+		datasource.open();
+		values = datasource.getAllTeamBeans();
+		datasource.close();
+		
+		super.notifyDataSetChanged();
+	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
@@ -106,5 +117,7 @@ public class MenuListAdapter extends ArrayAdapter<String>
 		this.values = values;
 		notifyDataSetChanged();
 	}
+	
+	
 
 }

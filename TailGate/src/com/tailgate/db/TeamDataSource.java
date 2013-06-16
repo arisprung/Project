@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.w3c.dom.Comment;
 
-
 import com.tailgate.TeamBean;
 
 import android.content.ContentValues;
@@ -37,25 +36,54 @@ public class TeamDataSource
 		dbHelper.close();
 	}
 
+	public boolean checkIfTeamExist(String team)
+	{
+		Cursor cursor;
+
+		cursor = database.rawQuery("SELECT * FROM " + TeamSQLiteHelper.TABLE_TEAM + " WHERE " + TeamSQLiteHelper.COLUMN_TEAM_NAME + " = '" + team
+				+ "'", null);
+		if (cursor.getCount() > 0)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public int checkHowManyTeamsExist()
+	{
+		Cursor cursor;
+
+		cursor = database.rawQuery("SELECT * FROM " + TeamSQLiteHelper.TABLE_TEAM, null);
+
+		return cursor.getCount();
+	}
+
 	public TeamBean createTeamEntry(String team)
 	{
-		
+
 		ContentValues values = new ContentValues();
-		values.put(TeamSQLiteHelper.COLUMN_TEAM_NAME,team);
-	
+		values.put(TeamSQLiteHelper.COLUMN_TEAM_NAME, team);
 
 		long insertId = database.insert(TeamSQLiteHelper.TABLE_TEAM, null, values);
-		Cursor cursor = database.query(TeamSQLiteHelper.TABLE_TEAM, allColumns, TeamSQLiteHelper.COLUMN_ID + " = " + insertId, null, null,
-				null, null);
+		Cursor cursor = database
+				.query(TeamSQLiteHelper.TABLE_TEAM, allColumns, TeamSQLiteHelper.COLUMN_ID + " = " + insertId, null, null, null, null);
 		cursor.moveToFirst();
 		TeamBean newTeamBean = cursorToTeam(cursor);
 		cursor.close();
 		return newTeamBean;
 	}
 
-	public void deleteTeam(String username)
+	public void deleteTeam(String teamname)
 	{
-		database.delete(TeamSQLiteHelper.TABLE_TEAM, TeamSQLiteHelper.COLUMN_TEAM_NAME + " = " + username, null);
+		try	
+		{
+			database.delete(TeamSQLiteHelper.TABLE_TEAM, TeamSQLiteHelper.COLUMN_TEAM_NAME + "='"+teamname+"'", null);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 
 	public ArrayList<String> getAllTeamBeans()
@@ -80,7 +108,7 @@ public class TeamDataSource
 		TeamBean team = new TeamBean();
 		team.setId(cursor.getLong(0));
 		team.setTeamname(cursor.getString(1));
-		
+
 		return team;
 	}
 

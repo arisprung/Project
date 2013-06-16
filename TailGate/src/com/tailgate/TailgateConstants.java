@@ -17,7 +17,7 @@ public class TailgateConstants
 	
 	
 //////////////////////////////////////////////////////////////////////////
-	public static final String MENU_ADD_TEAM                      = "Add Team";
+	public static final String MENU_ADD_TEAM                      = "Select a team";
 	public static final String MENU_YOUR_TEAM                      = "Your Team's";
 	public static final String MENU_TEAM_KEY 				= "team_key"; 
 	

@@ -3,18 +3,16 @@ package com.tailgate.activities;
 import java.util.ArrayList;
 
 import android.app.ProgressDialog;
-import android.content.ContentValues;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.tailgate.LocationBean;
 import com.tailgate.R;
@@ -22,12 +20,10 @@ import com.tailgate.TailGateService;
 import com.tailgate.TailgateConstants;
 import com.tailgate.TailgateSharedPrefrence;
 import com.tailgate.db.LocationDataSource;
-
-import com.tailgate.db.MessageSQLiteHelper;
 import com.tailgate.db.TailGateMessageContentProvider;
+import com.tailgate.fragments.ChatListFragment;
 import com.tailgate.fragments.MenuFragment;
 import com.tailgate.fragments.MessageFrament;
-import com.tailgate.list.MessageCursorAdapter;
 import com.tailgate.menu.BaseActivity;
 
 public class MainActivity extends BaseActivity
@@ -35,7 +31,7 @@ public class MainActivity extends BaseActivity
 
 	private Fragment mContent;
 	private LocationDataSource locationDataSource;
-	public static String  mLeagueSelected;
+	public static String mLeagueSelected;
 
 	private final static String TAG = MainActivity.class.toString();
 	private String imei;
@@ -62,15 +58,13 @@ public class MainActivity extends BaseActivity
 
 		Intent service = new Intent(getApplicationContext(), TailGateService.class);
 		startService(service);
-		
-		
 
 		tailgateSharedPrefs = new TailgateSharedPrefrence();
 		imei = tailgateSharedPrefs.getStringSharedPreferences(getApplicationContext(), TailgateConstants.IMEI, "");
 		if (savedInstanceState != null)
 			mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 		if (mContent == null)
-			mContent = new MessageFrament();
+			mContent = new ChatListFragment();
 
 		setContentView(R.layout.content_frame);
 		getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
@@ -245,7 +239,26 @@ public class MainActivity extends BaseActivity
 		return FragManage;
 	}
 
-	
-	
+	@Override
+	protected void onDestroy()
+	{
+		unregisterReceiver(UpdateMenuListReciever);
+		super.onDestroy();
+	}
+
+	@Override
+	protected void onResume()
+	{
+		registerReceiver(UpdateMenuListReciever, new IntentFilter("Refresh_Adapter"));
+		super.onResume();
+	}
+
+	private BroadcastReceiver UpdateMenuListReciever = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent)
+		{
+			MenuFragment.teamAdapter.notifyDataSetChanged();
+		}
+	};
 
 }
